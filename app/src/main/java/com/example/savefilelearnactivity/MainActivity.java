@@ -39,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case 1:if(grantResults.length>0&&grantResults[0]!=PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(MainActivity.this,"you've rejected us",Toast.LENGTH_SHORT).show();
-            }
-            break;
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(MainActivity.this, "you've rejected us", Toast.LENGTH_SHORT).show();
+                }
+                break;
             default:
                 break;
         }
@@ -59,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.bt_save);
 
 
-
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, permissions, 1);
         }
@@ -72,14 +72,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
 
     private void saveText(String text) {
         try {
-            fileOutputStream = getApplicationContext().openFileOutput("mydamnfile.txt",MODE_PRIVATE);
+            fileOutputStream = getApplicationContext().openFileOutput("mydamnfile.txt", MODE_PRIVATE);
             outputStreamWriter = new OutputStreamWriter(fileOutputStream);
             writer = new BufferedWriter(outputStreamWriter);
             writer.write(text);
