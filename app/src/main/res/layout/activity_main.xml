@@ -24,4 +24,13 @@
         android:textAllCaps="false"
         android:text="Save"
         android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/bt_import"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:text="Import"
+        android:layout_marginTop="5dp"/>
 </LinearLayout>
